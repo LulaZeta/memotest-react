@@ -28,7 +28,7 @@ const App = () => {
         setShuffledMemoBlocks(shuffledMemoBlocksCopy);
         if(selectedMemoBlock === null) {
             setselectedMemoBlock(memoBlock);
-          } else if(selectedMemoBlock.emoji === memoBlock.emoji) {
+          } else if(selectedMemoBlock.card === memoBlock.card) {
             setselectedMemoBlock(null);
           } else {
             setAnimating(true);
