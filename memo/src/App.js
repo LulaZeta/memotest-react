@@ -22,21 +22,21 @@ const App = () => {
     }
 
     const handleMemoClick = memoBlock => {
-        const flippedMemoBlock = { ...memoBlock, flipped: true };
-        let shuffledMemoBlocksCopy = [...shuffledMemoBlocks];
-        shuffledMemoBlocksCopy.splice(memoBlock.index, 1, flippedMemoBlock);
-        setShuffledMemoBlocks(shuffledMemoBlocksCopy);
-        if(selectedMemoBlock === null) {
+        const flippedMemoBlock = { ...memoBlock, flipped: true };  //constante q da vuelta la card clickeada
+        let shuffledMemoBlocksCopy = [...shuffledMemoBlocks];   //copia de la listade bloquees q vamos a usar
+        shuffledMemoBlocksCopy.splice(memoBlock.index, 1, flippedMemoBlock); //en la copia de arriba reemplamos el card q seleccionamos por el bloque dado vuelta
+        setShuffledMemoBlocks(shuffledMemoBlocksCopy);  //seteamos el nuevo listado de Bloques con el card dado vuelta, hay 3 posibilidades:
+        if(selectedMemoBlock === null) {        //no hay card seleccionada
             setselectedMemoBlock(memoBlock);
-          } else if(selectedMemoBlock.card === memoBlock.card) {
-            setselectedMemoBlock(null);
-          } else {
+          } else if(selectedMemoBlock.card === memoBlock.card) {  //el seleccionado con el dado vuelta son iguales
+            setselectedMemoBlock(null);   //dejamos todo como está para q el usuario pueda seguir jugando
+          } else {   //el usuario no acertó . El seleccionado es distinto del dado vuelta, hacemos la animación de los bloques
             setAnimating(true);
             setTimeout(() => {
-              shuffledMemoBlocksCopy.splice(memoBlock.index, 1, memoBlock);
+              shuffledMemoBlocksCopy.splice(memoBlock.index, 1, memoBlock);  //seleccionamos los dos bloques pero dado vuelta
               shuffledMemoBlocksCopy.splice(selectedMemoBlock.index, 1, selectedMemoBlock);
-              setShuffledMemoBlocks(shuffledMemoBlocksCopy);
-              setselectedMemoBlock(null);
+              setShuffledMemoBlocks(shuffledMemoBlocksCopy);  //seteamos la lista con los bloques cambiados (dado vueltas)
+              setselectedMemoBlock(null); //ya terminó la animación
               setAnimating(false);
             }, 1000);
           }
