@@ -18,6 +18,9 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
+.memo-block-flipped {
+    transform: rotateY(180deg);
+}
 
 .memo-block-back {
     background-color: #EF626C;
@@ -30,8 +33,4 @@
 }
 .memo-block-front {
     background-color: #84DCCF;
-}
-
-.memo-block:hover .memo-block-inner {
-    transform: rotateY(180deg);
 }
