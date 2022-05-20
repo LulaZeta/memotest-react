@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import Board from './components/Board/Board';
+
 const imgList = [...'💣🧤🎩🌮🎱🌶🍕🦖'];
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
     }
     return (
         <Board memoBlocks= {shuffledMemoBlocks} animating={animating}  handleMemoClick={handleMemoClick} />
+        
     );
 }
 
