@@ -5,7 +5,7 @@ const Board = ({ memoBlocks }) => {
     return (
         <main className="board">
             {memoBlocks.map((memoBlock, i) => {
-                return <MemoBlock key={`${i}_${memoBlock.img}`} memoBlock={memoBlock} />
+                return <MemoBlock key={`${i}_${memoBlock.card}`} memoBlock={memoBlock} />
             })}
         </main>
     )

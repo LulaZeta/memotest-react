@@ -7,7 +7,7 @@ const MemoBlock = ({memoBlock}) => (
 
             </div>
             <div className='memo-block-back'>
-                {memoBlock.img}
+                {memoBlock.card}
             </div>
         </div>
     </div>

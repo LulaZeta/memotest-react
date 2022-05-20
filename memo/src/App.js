@@ -8,7 +8,7 @@ const App = () => {
 
     useEffect( () => {
         const shuffledImgList = shuffleArray([...imgList, ...imgList]);
-        setShuffleMemoBlocks(shuffledImgList.map((img, i) => ({ index: i, img, flipped: false })));
+        setShuffleMemoBlocks(shuffledImgList.map((card, i) => ({ index: i, card, flipped: false })));
     }, []);
   
     const shuffleArray = a => {                                 
